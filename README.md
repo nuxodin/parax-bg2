@@ -7,6 +7,7 @@ Highly fantastic Parallax backgrounds
 - works for dynamic added elements
 - very lightweight
 - optional element [bg-parax-visible], with only the reachable area.
+- light weight ~4KB
 
 ## Demo 
 https://rawcdn.githack.com/nuxodin/parax-bg/67f879d647467e6a65b08f0e7f8552aa17b740db/tests/demo.html
