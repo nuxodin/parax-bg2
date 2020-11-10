@@ -1,5 +1,5 @@
 # parax-bg
-Parallax backgrounds
+Highly fantastic Parallax backgrounds
 
 ## Features
 - fast!
