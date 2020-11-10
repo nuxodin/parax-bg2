@@ -27,7 +27,7 @@ import 'https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.0.0/parax-bg.min.js';
 
     <h1> Content </h1>
 
-    <div parax-bg style="background-image:url(bg.jpg)" style="--parax-bg-offset:50px">
+    <div parax-bg style="background-image:url(bg.jpg)" style="--parax-bg-speed:.7">
         <div parax-bg-visible>
             I am reachable
         </div>
