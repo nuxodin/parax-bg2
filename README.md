@@ -6,7 +6,7 @@ Highly fantastic Parallax backgrounds
 - easy API
 - works for dynamic added elements
 - very lightweight
-- Optional element [bg-parax-visible], with the reachable area.
+- optional element [bg-parax-visible], with only the reachable area.
 
 ## Demo 
 https://rawcdn.githack.com/nuxodin/parax-bg/67f879d647467e6a65b08f0e7f8552aa17b740db/tests/demo.html
