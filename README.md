@@ -29,7 +29,7 @@ import 'https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.1.0/parax-bg.min.js';
 
     <div parax-bg style="background-image:url(bg.jpg)" style="--parax-bg-speed:.7">
         <div parax-bg-visible>
-            I am safely reachable
+            I am the reachable part
         </div>
     </div>
     
