@@ -9,11 +9,11 @@ Highly fantastic Parallax backgrounds
 - light weight ~4KB
 
 ## Demos 
-- different speeds
+- different speeds  
 https://raw.githack.com/nuxodin/parax-bg2/master/tests/speed.html
-- reachable area [bg-parax-visible]
+- reachable area [bg-parax-visible]  
 https://raw.githack.com/nuxodin/parax-bg2/master/tests/visible.html
-- demo
+- demo  
 https://raw.githack.com/nuxodin/parax-bg2/master/tests/demo.html
 
 
