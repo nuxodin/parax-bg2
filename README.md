@@ -3,7 +3,7 @@ Highly fantastic Parallax backgrounds
 
 ## Features
 - fast!
-- easy API
+- easy, declarative API
 - works for dynamic added elements
 - Optional element [bg-parax-visible], with only the reachable area.
 - light weight ~4KB
@@ -29,7 +29,7 @@ import 'https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.1.0/parax-bg.min.js';
 
     <div parax-bg style="background-image:url(bg.jpg)" style="--parax-bg-speed:.7">
         <div parax-bg-visible>
-            I am reachable
+            I am safely reachable
         </div>
     </div>
     
