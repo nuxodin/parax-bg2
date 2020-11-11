@@ -8,8 +8,14 @@ Highly fantastic Parallax backgrounds
 - Optional element [bg-parax-visible], with only the reachable area.
 - light weight ~4KB
 
-## Demo 
-https://rawcdn.githack.com/nuxodin/parax-bg2/83002f40427bcf3f5e5ae9f9403cdc10ceac4004/tests/demo.html
+## Demos 
+- different speeds
+https://raw.githack.com/nuxodin/parax-bg2/master/tests/speed.html
+- reachable area [bg-parax-visible]
+https://raw.githack.com/nuxodin/parax-bg2/master/tests/visible.html
+- demo
+https://raw.githack.com/nuxodin/parax-bg2/master/tests/demo.html
+
 
 
 ## Ussage
