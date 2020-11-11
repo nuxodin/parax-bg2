@@ -110,8 +110,10 @@ class Item {
                 top    = Math.max(offsetAtTop, -offsetAtElBottom);
                 bottom = Math.min(-offsetAtElTop, offsetAtBottom);
             }
-            visibleEl.style.top    = Math.max(offset - top, 0)  + 'px';
-            visibleEl.style.bottom = Math.max(offset + bottom, 0) + 'px';
+            //visibleEl.style.top    = Math.max(offset - top, 0)  + 'px';
+            //visibleEl.style.bottom = Math.max(offset + bottom, 0) + 'px';
+            visibleEl.style.top    = offset - top  + 'px';
+            visibleEl.style.bottom = offset + bottom + 'px';
         }
     }
     offsetAtPageY(pageY){
