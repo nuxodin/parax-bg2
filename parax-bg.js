@@ -87,22 +87,31 @@ class Item {
         this.bg.style.top    = -offset + 'px';
         this.bg.style.bottom = -offset + 'px';
 
+        // if the element cannot go further down or up
         // the [parax-bg-visible] element
+        // the most complicated part of the lib, seems to work well, but it was born by trial and error
         if (this.speed < 0) {
             console.warn('parax-bg: parax-bg-visible attribute is not implemented for speed < 0')
             return;
         }
         const visibleEl = this.bg.querySelector('[parax-bg-visible]');
         if (visibleEl) {
-            let maxTop = this.cachedViewportRect.top;
-            if (this.speed > 1) maxTop = 0;
-            let maxOffset = this.offsetAtPageY(maxTop);
-            visibleEl.style.top =  offset - maxOffset  + 'px';
-
-            let maxBottom = this.cachedViewportRect.bottom - winHeight;
-            if (this.speed > 1) maxBottom = scrollHeight - winHeight;
-            let maxOffsetBottom = this.offsetAtPageY(maxBottom);
-            visibleEl.style.bottom =  offset + maxOffsetBottom + 'px';
+            let top = 0;
+            let bottom = 0;
+            let offsetAtElTop    = this.offsetAtPageY(this.cachedViewportRect.top);
+            let offsetAtTop      = this.offsetAtPageY(0);
+            let offsetAtElBottom = this.offsetAtPageY(this.cachedViewportRect.bottom - winHeight);
+            let offsetAtBottom   = this.offsetAtPageY(scrollHeight - winHeight);
+            if (this.speed < 1) {
+                top    = Math.min(offsetAtElTop, offsetAtBottom);
+                bottom = Math.max(offsetAtTop, offsetAtElBottom);
+            }
+            if (this.speed > 1) {
+                top    = Math.max(offsetAtTop, -offsetAtElBottom);
+                bottom = Math.min(-offsetAtElTop, offsetAtBottom);
+            }
+            visibleEl.style.top    = Math.max(offset - top, 0)  + 'px';
+            visibleEl.style.bottom = Math.max(offset + bottom, 0) + 'px';
         }
     }
     offsetAtPageY(pageY){

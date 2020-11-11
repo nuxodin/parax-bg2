@@ -5,8 +5,7 @@ Highly fantastic Parallax backgrounds
 - fast!
 - easy API
 - works for dynamic added elements
-- very lightweight
-- optional element [bg-parax-visible], with only the reachable area.
+- Optional element [bg-parax-visible], with only the reachable area.
 - light weight ~4KB
 
 ## Demo 
@@ -18,11 +17,11 @@ https://rawcdn.githack.com/nuxodin/parax-bg/67f879d647467e6a65b08f0e7f8552aa17b7
 Add the attribute "parax-bg" to the element that should be the background of its parent. It will be absolute positionized and its parent relative.
 
 ```js
-import 'https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.0.0/parax-bg.min.js';
+import 'https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.1.0/parax-bg.min.js';
 ```
 
 ```html
-<link rel=stylesheet href="https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.0.0/parax-bg.min.css">
+<link rel=stylesheet href="https://cdn.jsdelivr.net/gh/nuxodin/parax-bg2@1.1.0/parax-bg.min.css">
 
 <div class="parax-bg-vp">
 
