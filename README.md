@@ -5,7 +5,7 @@ Highly fantastic Parallax backgrounds
 - fast!
 - easy, declarative API
 - works for dynamic added elements
-- Optional element [bg-parax-visible], with only the reachable area.
+- optional element [bg-parax-visible], with only the reachable area
 - light weight ~4KB
 
 ## Demos 
