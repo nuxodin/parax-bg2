@@ -9,7 +9,7 @@ Highly fantastic Parallax backgrounds
 - light weight ~4KB
 
 ## Demo 
-https://rawcdn.githack.com/nuxodin/parax-bg/67f879d647467e6a65b08f0e7f8552aa17b740db/tests/demo.html
+https://rawcdn.githack.com/nuxodin/parax-bg2/83002f40427bcf3f5e5ae9f9403cdc10ceac4004/tests/demo.html
 
 
 ## Ussage
