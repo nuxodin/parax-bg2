@@ -28,19 +28,28 @@ const paraxBg = {
     }
 }
 
+// cache dimensions, Is it worth it?
 let pageY = pageYOffset;
+let winHeight = innerHeight;
+let scrollHeight = document.documentElement.scrollHeight;
 
 function addListeners(){
-	addEventListener('resize',paraxBg.calcViewportRect);
-	addEventListener('DOMContentLoaded',paraxBg.calcViewportRect);
-	addEventListener('load',paraxBg.calcViewportRect);
-	addEventListener('resize', paraxBg.positionize);
+	addEventListener('DOMContentLoaded', paraxBg.calcViewportRect);
+	addEventListener('load', paraxBg.calcViewportRect);
 	addEventListener('load', paraxBg.positionize);
 	document.addEventListener('scroll', function(e){
         pageY = pageYOffset;
         paraxBg.positionize();
     });
+	addEventListener('resize', function(){
+        pageY = pageYOffset;
+        winHeight = innerHeight;
+        scrollHeight = document.documentElement.scrollHeight;
+        paraxBg.calcViewportRect();
+        paraxBg.positionize();
+    });
 }
+
 
 const style = document.createElement('style');
 style.innerHTML =
@@ -52,10 +61,9 @@ document.head.prepend(style);
 class Item {
     constructor(element){
         this.bg = element;
-        let style = getComputedStyle(element);
-        let speed = style.getPropertyValue('--parax-bg-speed');
+        const style = getComputedStyle(element);
+        const speed = style.getPropertyValue('--parax-bg-speed');
         this.speed = speed === '' ? .5 : parseFloat(speed);
-        this.factor = this.speed - 1;
     }
     connect(){
         this.viewport = this.bg.parentNode;
@@ -64,7 +72,7 @@ class Item {
         this.positionize();
     }
     calcViewportRect(){
-        let rect = this.viewport.getBoundingClientRect();
+        const rect = this.viewport.getBoundingClientRect();
         this.cachedViewportRect = { // todo: add border-width
             top:    pageY + rect.top,
             bottom: pageY + rect.bottom,
@@ -98,10 +106,10 @@ class Item {
         if (visibleEl) {
             let top = 0;
             let bottom = 0;
-            let offsetAtElTop    = this.offsetAtPageY(this.cachedViewportRect.top);
-            let offsetAtTop      = this.offsetAtPageY(0);
-            let offsetAtElBottom = this.offsetAtPageY(this.cachedViewportRect.bottom - winHeight);
-            let offsetAtBottom   = this.offsetAtPageY(scrollHeight - winHeight);
+            const offsetAtElTop    = this.offsetAtPageY(this.cachedViewportRect.top);
+            const offsetAtTop      = this.offsetAtPageY(0);
+            const offsetAtElBottom = this.offsetAtPageY(this.cachedViewportRect.bottom - winHeight);
+            const offsetAtBottom   = this.offsetAtPageY(scrollHeight - winHeight);
             if (this.speed < 1) {
                 top    = Math.min(offsetAtElTop, offsetAtBottom);
                 bottom = Math.max(offsetAtTop, offsetAtElBottom);
@@ -117,7 +125,7 @@ class Item {
         }
     }
     offsetAtPageY(pageY){
-        var moved = this.cachedViewportRect.yCenter - (pageY + winHeight/2);
+        const moved = this.cachedViewportRect.yCenter - (pageY + winHeight/2);
         return moved*(this.speed-1);
     }
     positionize(){
@@ -125,13 +133,6 @@ class Item {
     }
 }
 
-// cache innerHeight, Is it worth it?
-var winHeight = innerHeight;
-var scrollHeight = document.documentElement.scrollHeight;
-addEventListener('resize',function(){
-    winHeight = innerHeight;
-    scrollHeight = document.documentElement.scrollHeight;
-});
 
 
 wickedElements.define(
