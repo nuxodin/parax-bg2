@@ -28,7 +28,7 @@ const paraxBg = {
     }
 }
 
-// cache dimensions, Is it worth it?
+// cache dimensions. Is it worth it?
 let pageY = pageYOffset;
 let winHeight = innerHeight;
 let scrollHeight = document.documentElement.scrollHeight;
